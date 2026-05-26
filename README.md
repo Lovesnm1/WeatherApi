@@ -24,12 +24,6 @@ A simple weather API built with Node.js and Express, utilizing Redis for caching
 - Redis server running
 - Access to the weather API service (Visual Crossing)
 
-### Prerequisites
-
-- Node.js (v14 or later)
-- Redis server running
-- Access to the weather API service (Visual Crossing)
-
 ### Installation
 
 1. Clone the repository:
