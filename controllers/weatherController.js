@@ -10,6 +10,7 @@ const getWeather = async (req, res) => {
     const cachedData = await redisClient.get(cacheKey);
     if (cachedData) {
       console.log('Cache hit');
+      //console.log(cacheKey);
       return res.json(JSON.parse(cachedData));
     }
     else {
@@ -19,6 +20,7 @@ const getWeather = async (req, res) => {
         }
         const weatherData = response.data;
         await redisClient.set(cacheKey, JSON.stringify(weatherData), 'EX', 3600); // Cache for 1 hour
+        //console.log(cacheKey, weatherData);
         res.json(weatherData);
         }
     } catch (error) {
